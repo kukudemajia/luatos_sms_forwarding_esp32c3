@@ -1,5 +1,6 @@
 # 感谢
-本源代码源自于https://github.com/chenxuuu/sms_forwarding，本人未经作者授权即自行修改，作者如认为有侵权请联系本人删库。
+本源代码源自于https://github.com/chenxuuu/sms_forwarding
+本人未经作者授权即自行修改，作者如认为有侵权请联系本人删库。
 
 # 重要提醒
 下载代码后，请自行把script/config_sample.lua文件更名为config.lua，并按照实际情况填写该配置文件。
