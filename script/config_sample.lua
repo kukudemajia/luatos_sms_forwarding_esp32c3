@@ -52,4 +52,12 @@ _M.SERVERKEY = ""
 _M.PUSHOVERAPITOKEN = ""
 _M.PUSHOVERUSERKEY = ""
 
+-- LED灯配置
+-- ESP状态灯 开启true，关闭false（默认）
+_M.ESP_LEDSTATUS = false
+-- Air系列，设置已经注册上网络时的网络灯闪烁时间间隔，默认20秒闪烁一次，
+-- 此项参数主要是解决FS-MCore-A724UG(YunDTU)模块无法保存设置参数，每次重启都丢失
+-- 开启true（20秒闪烁一次），关闭false（固件默认参数，不做更改）
+_M.AIR_SERIES_SLEDS = true
+
 return _M

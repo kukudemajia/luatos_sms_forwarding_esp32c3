@@ -8,6 +8,9 @@ log.info("main", PROJECT, VERSION)
 sys = require("sys")
 require("sysplus")
 
+-- 导入配置文件
+local config = require("config")
+
 if wdt then
     --添加硬狗防止程序卡死，在支持的设备上启用这个功能
     wdt.init(9000)--初始化watchdog设置为9s
@@ -83,7 +86,10 @@ sys.taskInit(function()
     air780.loopAT("AT+CSCS=\"UCS2\"","AT_CSCS")
     --短信内容直接上报不缓存
     air780.loopAT("AT+CNMI=2,2,0,0,0","AT_CNMI")
-
+    -- 设置已经注册上网络时的网络灯闪烁时间间隔，默认20秒闪一次
+    if config.AIR_SERIES_SLEDS then
+        air780.loopAT("AT+SLEDS=2,500,20000","AT_SLEDS")
+    end
     --检查附着
     log.info("air780","wait for connection")
     while true do

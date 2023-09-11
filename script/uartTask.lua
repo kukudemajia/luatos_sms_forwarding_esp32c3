@@ -77,6 +77,10 @@ sys.subscribe(recvReady, function()
             sys.publish("AT_SEND_SMS")
             return
         end
+        if line == "AT+SLEDS=2,500,20000" then
+            sys.publish("AT_SLEDS")
+            return
+        end
         local urc = line:match("^%+(%w+)")
         if urc then--urc上报
             if urc == "CGATT" then--基站附着状态
